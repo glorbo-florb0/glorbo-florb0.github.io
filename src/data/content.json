@@ -1,0 +1,68 @@
+{
+  "who": [
+    ["role", "student, aspiring pentester"],
+    ["degree", "BSc (Hons) Ethical Hacking and Cyber Security"],
+    ["status", "learning, building, documenting"]
+  ],
+  "skills": {
+    "Offensive security": [
+      "Penetration testing",
+      "Burp Suite",
+      "Nmap",
+      "Metasploit",
+      "OWASP Top 10"
+    ],
+    "Networking": ["Cisco Packet Tracer", "TCP/IP", "VLANs and routing", "Wireshark"],
+    "Programming": ["Python", "Bash", "JavaScript", "C"],
+    "Forensics and systems": ["Linux", "Autopsy", "Timeline analysis", "Report writing"]
+  },
+  "projects": [
+    {
+      "t": "Web app penetration test",
+      "d": "Formal pentest report covering recon, exploitation, and remediation advice.",
+      "tag": "Web security",
+      "url": "#"
+    },
+    {
+      "t": "Enterprise network build",
+      "d": "Segmented company network designed and configured in Cisco Packet Tracer.",
+      "tag": "Networking",
+      "url": "#"
+    },
+    {
+      "t": "Breach forensic timeline",
+      "d": "Reconstructed an attack sequence from logs and artifacts.",
+      "tag": "Forensics",
+      "url": "#"
+    }
+  ],
+  "ctf": [
+    {
+      "t": "OverTheWire: Bandit",
+      "d": "Step-by-step notes for each level.",
+      "tag": "Wargames",
+      "url": "#"
+    },
+    { "t": "TryHackMe", "d": "Room walkthroughs and takeaways.", "tag": "Labs", "url": "#" },
+    {
+      "t": "PortSwigger Labs",
+      "d": "Burp Academy notes, payloads, and lab solutions.",
+      "tag": "Web security",
+      "url": "#"
+    }
+  ],
+  "achievements": [
+    { "t": "Root-Me", "when": "2024", "d": "Completed challenges in root-me.org." },
+    {
+      "t": "CTF participations",
+      "when": "2025",
+      "d": "Online international CTF participations with high placements."
+    }
+  ],
+  "posts": [],
+  "contact": [
+    ["Name", "Glorbo"],
+    ["Email", "glorboflorbo96@gmail.com"]
+  ],
+  "socials": [["GitHub", "https://github.com/glorbo-florb0"]]
+}

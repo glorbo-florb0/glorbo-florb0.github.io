@@ -1,0 +1,12 @@
+{
+  "name": "Glorbo | Cybersecurity Portfolio",
+  "short_name": "Glorbo",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0a1f3f",
+  "theme_color": "#0a1f3f",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

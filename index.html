@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Glorbo | Cybersecurity Portfolio</title>
+    <meta
+      name="description"
+      content="Ethical hacking and cyber security student. Projects, CTF writeups, and notes."
+    />
+    <meta name="author" content="Glorbo" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <link rel="canonical" href="https://glorbo-florb0.github.io/" />
+    <!-- CSP -->
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Glorbo" />
+    <meta property="og:title" content="Glorbo | Cybersecurity Portfolio" />
+    <meta
+      property="og:description"
+      content="Ethical hacking and cyber security student. Projects, CTF writeups, and notes."
+    />
+    <meta property="og:url" content="https://glorbo-florb0.github.io/" />
+    <meta property="og:image" content="https://glorbo-florb0.github.io/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Glorbo",
+        "url": "https://glorbo-florb0.github.io/",
+        "jobTitle": "Ethical hacking and cyber security student",
+        "sameAs": ["https://github.com/glorbo-florb0"]
+      }
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap">
+        <nav aria-label="Main">
+          <a class="logo" href="#whoami">GLORBO</a>
+          <button id="menu" type="button" aria-expanded="false" aria-controls="links">Menu</button>
+          <ul id="links">
+            <li><a href="#whoami">whoami</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#ctf">CTF</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="whoami" class="hero">
+        <div class="wrap">
+          <div>
+            <h1>Securing systems by learning how they break.</h1>
+            <div class="who" id="who"></div>
+            <p>
+              Hi, I'm Glorbo. I'm studying ethical hacking and cyber security, and I document every
+              lab, test, and CTF I work on.
+            </p>
+            <a class="btn main" href="#projects">See my projects</a>
+            <a class="btn" href="#blog" id="blogCta">Read my writeups</a>
+          </div>
+          <svg
+            class="radar"
+            viewBox="0 0 400 400"
+            role="img"
+            aria-label="Radar graphic showing focus areas: pentesting, networks, forensics, CTF"
+          >
+            <defs>
+              <radialGradient id="fade">
+                <stop offset="0" stop-color="#6fa0e6" stop-opacity=".05" />
+                <stop offset="1" stop-color="#6fa0e6" stop-opacity=".45" />
+              </radialGradient>
+            </defs>
+            <g fill="none" stroke="#6fa0e6" stroke-opacity=".45">
+              <circle cx="200" cy="200" r="60" />
+              <circle cx="200" cy="200" r="120" />
+              <circle cx="200" cy="200" r="180" />
+              <path d="M20 200H380M200 20V380M73 73L327 327M327 73L73 327" stroke-opacity=".2" />
+            </g>
+            <g class="sweep">
+              <path d="M200 200L380 200A180 180 0 0 0 347.4 96.8Z" fill="url(#fade)" />
+              <path d="M200 200L380 200" stroke="#9fc2f5" stroke-width="2" />
+            </g>
+            <g
+              fill="#fff"
+              font-family="Barlow Semi Condensed,Arial,sans-serif"
+              font-size="16"
+              font-weight="600"
+            >
+              <circle cx="278" cy="118" r="5" />
+              <text x="288" y="112">Pentesting</text>
+              <circle cx="118" cy="140" r="5" />
+              <text x="46" y="128">Networks</text>
+              <circle cx="292" cy="262" r="5" />
+              <text x="302" y="268">Forensics</text>
+              <circle cx="150" cy="292" r="5" />
+              <text x="80" y="318">CTF</text>
+              <circle cx="200" cy="200" r="6" fill="#6fa0e6" />
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <section class="facts" aria-label="At a glance">
+        <div class="wrap" id="facts"></div>
+      </section>
+
+      <section id="about">
+        <div class="wrap two">
+          <h2>About</h2>
+          <div>
+            <p>
+              I'm a BSc (Hons) Ethical Hacking and Cyber Security student. My focus is penetration
+              testing and network security, and I'm working toward a career in offensive security.
+            </p>
+            <p>
+              Right now I'm practicing web application testing, documenting findings in formal
+              reports, and building small tools to automate the repetitive parts. Open to CTF teams,
+              collaborations, and internships.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="alt">
+        <div class="wrap">
+          <h2>Skills</h2>
+          <div class="tiles" id="skillTiles"></div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="wrap">
+          <h2>Projects</h2>
+          <div class="grid" id="projectGrid"></div>
+        </div>
+      </section>
+
+      <section id="ctf" class="alt">
+        <div class="wrap">
+          <h2>CTF platforms &amp; writeups</h2>
+          <div class="grid" id="ctfGrid"></div>
+        </div>
+      </section>
+
+      <section id="achievements">
+        <div class="wrap">
+          <h2>Achievements</h2>
+          <ul class="news" id="achList"></ul>
+        </div>
+      </section>
+
+      <section id="blog" class="alt">
+        <div class="wrap">
+          <h2>Blog &amp; writeups</h2>
+          <ul class="news" id="postList"></ul>
+        </div>
+      </section>
+
+      <section id="contact" class="dark">
+        <div class="wrap">
+          <h2>Contact</h2>
+          <div class="cols">
+            <div class="rows" id="contactRows"></div>
+            <div>
+              <h3>Find me online</h3>
+              <ul id="socials"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="legal">
+          <div class="wrap">&copy; <span id="yr"></span> Glorbo. All rights reserved.</div>
+        </div>
+      </section>
+    </main>
+
+    <noscript>
+      <p class="noscript">
+        Project lists and contact details load with JavaScript. Please enable it to see them.
+      </p>
+    </noscript>
+  </body>
+</html>

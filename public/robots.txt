@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://glorbo-florb0.github.io/sitemap.xml

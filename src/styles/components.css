@@ -1,0 +1,262 @@
+/* ---- buttons & links ---- */
+.btn {
+  display: inline-block;
+  padding: 13px 26px;
+  font: 600 1.05rem var(--head);
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  border: 2px solid #fff;
+  margin: 0 12px 12px 0;
+}
+
+.btn.main {
+  background: #fff;
+  color: var(--navy);
+}
+
+.btn:hover {
+  background: var(--sky);
+  border-color: var(--sky);
+  color: var(--navy);
+}
+
+.more {
+  display: inline-block;
+  font: 600 1rem var(--head);
+  letter-spacing: 0.02em;
+  color: var(--blue);
+  border-bottom: 2px solid currentcolor;
+  text-decoration: none;
+  padding-bottom: 1px;
+}
+
+.more:hover {
+  color: var(--navy);
+}
+
+/* ---- decorative art strip used by tiles and cards ---- */
+.art {
+  height: 150px;
+  position: relative;
+  background:
+    radial-gradient(
+      circle at 78% 120%,
+      transparent 0 40px,
+      rgba(111, 160, 230, 0.35) 41px 42px,
+      transparent 43px 80px,
+      rgba(111, 160, 230, 0.25) 81px 82px,
+      transparent 83px
+    ),
+    linear-gradient(135deg, var(--navy), var(--blue));
+}
+
+.tiles .tile:nth-child(2) .art,
+.grid .card:nth-child(2) .art {
+  background-color: #14366f;
+  filter: hue-rotate(-12deg);
+}
+
+.tiles .tile:nth-child(3) .art,
+.grid .card:nth-child(3) .art {
+  filter: hue-rotate(12deg);
+}
+
+.tiles .tile:nth-child(4) .art {
+  filter: saturate(0.6) brightness(1.15);
+}
+
+/* ---- skill tiles ---- */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 22px;
+}
+
+.tile {
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.tile h3,
+.card h3 {
+  font: 600 1.45rem / 1.2 var(--head);
+  color: var(--navy);
+}
+
+.tile .in {
+  padding: 22px;
+}
+
+.tile ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.tile li {
+  padding: 7px 0;
+  border-top: 1px solid var(--line);
+}
+
+/* ---- project / CTF cards ---- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 26px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  text-decoration: none;
+  border: 1px solid var(--line);
+}
+
+a.card:hover {
+  border-color: var(--blue);
+}
+
+.card .in {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.card .more {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.tag {
+  font: 500 0.92rem var(--head);
+  color: var(--blue);
+}
+
+/* ---- dated lists (achievements, blog) ---- */
+.news {
+  list-style: none;
+  padding: 0;
+}
+
+.news li {
+  border-top: 1px solid var(--line);
+}
+
+.news li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.news a,
+.news .it {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  text-decoration: none;
+}
+
+.news a:hover h3 {
+  color: var(--blue);
+}
+
+.date {
+  font: 600 0.95rem var(--head);
+  color: var(--muted);
+  line-height: 1.1;
+  text-align: center;
+  border-right: 1px solid var(--line);
+  padding-right: 20px;
+}
+
+.date b {
+  display: block;
+  font: 700 2.2rem / 1 var(--head);
+  color: var(--navy);
+}
+
+.date .year-only {
+  font-size: 1.7rem;
+}
+
+.news h3 {
+  font: 600 1.4rem / 1.25 var(--head);
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.news p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* ---- contact rows ---- */
+.rows {
+  display: grid;
+  gap: 0;
+  max-width: 520px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.row:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.row small {
+  display: block;
+  color: #9fb6d8;
+  font-size: 0.9rem;
+}
+
+.row button {
+  background: none;
+  border: 1px solid #6fa0e6;
+  color: #fff;
+  padding: 5px 14px;
+  font: 600 0.95rem var(--head);
+  cursor: pointer;
+}
+
+.row button:hover {
+  background: var(--sky);
+  color: var(--navy);
+}
+
+.dark h3 {
+  font: 600 1.3rem var(--head);
+  margin-bottom: 12px;
+}
+
+.dark ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dark li a {
+  display: inline-block;
+  padding: 5px 0;
+  color: #c3d1e8;
+  text-decoration: none;
+}
+
+.dark li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}

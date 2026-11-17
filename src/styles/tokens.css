@@ -1,0 +1,16 @@
+:root {
+  --white: #fff;
+  --soft: #f1f3f6;
+  --line: #dde2e9;
+  --text: #111827;
+  --muted: #586174;
+  --navy: #0a1f3f;
+  --blue: #1b4b9b;
+  --sky: #6fa0e6;
+
+  --head: "Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
+  --body: "Source Sans 3", system-ui, sans-serif;
+  --mono: ui-monospace, Menlo, Consolas, monospace;
+
+  --header-h: 68px;
+}

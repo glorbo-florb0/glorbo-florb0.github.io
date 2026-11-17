@@ -1,0 +1,97 @@
+# Self-hosted stack. (GitHub Pages deploys only the static site; this file is optional.)
+#
+# Network layout -- OWASP Docker Security D03 (network segmentation and firewalling):
+#
+#   internet --> [web] --- app (internal) --- [api] --- data (internal) --- [mongo]
+#
+#   public : only `web` joins it; it is the only network with a route to the outside and
+#            the only place a port is published.
+#   app    : internal. web <-> api only. No egress to the internet.
+#   data   : internal. api <-> mongo only. No egress, and web cannot see mongo at all.
+name: portfolio
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: /api
+    restart: unless-stopped
+    ports:
+      - "${WEB_BIND:-127.0.0.1}:${WEB_PORT:-8080}:8080"
+    networks: [public, app]
+    depends_on:
+      api:
+        condition: service_healthy
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  api:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    restart: unless-stopped
+    environment:
+      MONGO_URL: mongodb://${MONGO_USER}:${MONGO_PASS}@mongo:27017/portfolio?authSource=admin
+      ADMIN_TOKEN: ${ADMIN_TOKEN}
+    networks: [app, data]
+    depends_on:
+      mongo:
+        condition: service_healthy
+    read_only: true
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    # No `ports:` -- the API is reachable only through nginx, and only GET /api/content.
+
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASS}
+    networks: [data]
+    volumes:
+      - mongo_data:/data/db
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    # No `ports:` -- MongoDB is a classic service that must never be exposed to the LAN.
+
+networks:
+  public:
+    driver: bridge
+  app:
+    driver: bridge
+    internal: true
+  data:
+    driver: bridge
+    internal: true
+
+volumes:
+  mongo_data:

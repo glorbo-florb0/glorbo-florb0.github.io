@@ -1,0 +1,82 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  background: var(--white);
+  color: var(--text);
+  font: 400 18px/1.6 var(--body);
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--sky);
+  outline-offset: 3px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.wrap {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+section {
+  padding: 84px 0;
+}
+
+h2 {
+  font: 600 clamp(1.9rem, 3.4vw, 2.6rem) / 1.15 var(--head);
+  margin-bottom: 32px;
+  color: var(--navy);
+}
+
+p {
+  max-width: 64ch;
+}
+
+.alt {
+  background: var(--soft);
+}
+
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 20;
+  background: var(--white);
+  color: var(--navy);
+  padding: 10px 16px;
+  font: 600 1rem var(--head);
+}
+
+.skip:focus {
+  top: 12px;
+}
+
+.noscript {
+  padding: 24px 28px;
+  background: var(--soft);
+  text-align: center;
+  max-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
